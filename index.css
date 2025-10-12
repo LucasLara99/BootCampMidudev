@@ -77,10 +77,10 @@ header {
          background-color: var(--primary-dark);
          padding: 10px 20px;
          border-radius: 10px;
-      }
 
-      a:hover {
-         background-color: var(--primary-hover);
+         &:hover {
+            background-color: var(--primary-hover);
+         }
       }
    }
 }
@@ -164,11 +164,11 @@ main {
             font-weight: 600;
             font-size: 15px;
             border: none;
-         }
 
-         button:hover {
-            background-color: var(--primary-hover);
-            cursor: pointer;
+            &:hover {
+               background-color: var(--primary-hover);
+               cursor: pointer;
+            }
          }
       }
    }

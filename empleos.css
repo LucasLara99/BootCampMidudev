@@ -85,10 +85,10 @@ header {
       background-color: var(--primary-dark);
       padding: 10px 20px;
       border-radius: 10px;
-    }
 
-    a:hover {
-      background-color: var(--primary-hover);
+      &:hover {
+        background-color: var(--primary-hover);
+      }
     }
 
     img {
@@ -113,7 +113,7 @@ main {
 
     h2,
     p,
-    summary {
+    select {
       color: var(--text-primary);
     }
 
@@ -159,7 +159,8 @@ main {
       margin-top: 1rem;
       gap: 1rem;
 
-      summary {
+      select {
+        font-family: system-ui;
         background-color: var(--card-bg);
         border-radius: 15px;
         padding: 1rem;
