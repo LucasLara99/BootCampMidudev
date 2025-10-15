@@ -87,9 +87,11 @@ header {
       background-color: var(--primary-hover);
       padding: 10px 20px;
       border-radius: 10px;
+      transition-duration: 0.3s;
 
       &:hover {
         background-color: var(--primary-dark);
+        transform: scale(1.1);
       }
     }
 
@@ -203,21 +205,28 @@ main {
           margin: 1rem 0rem 2rem 0rem;
         }
 
-        a {
-          display: flex;
-          align-items: center;
+        button {
           text-decoration: none;
           color: var(--text-primary);
           font-weight: 600;
           background-color: var(--primary-light);
           padding: 10px 20px;
+          font-size: 16px;
           border: none;
           border-radius: 5px;
           height: 35px;
           cursor: pointer;
+          transition-duration: 0.3s;
 
           &:hover {
             background-color: var(--primary-hover);
+            scale: 1.1;
+          }
+
+          &:disabled {
+            background-color: var(--primary);
+            cursor: not-allowed;
+            scale: 1;
           }
         }
       }
@@ -225,6 +234,10 @@ main {
       article:not(:last-child) {
         border-bottom: 1px solid var(--text-muted);
       }
+    }
+
+    #clicable-button {
+      
     }
   }
 }

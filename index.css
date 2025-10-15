@@ -77,9 +77,11 @@ header {
       background-color: var(--primary-hover);
       padding: 10px 20px;
       border-radius: 10px;
+      transition-duration: 0.3s;
 
       &:hover {
         background-color: var(--primary-dark);
+        scale: 1.1;
       }
     }
   }
@@ -164,10 +166,12 @@ main {
         font-weight: 600;
         font-size: 15px;
         border: none;
+        transition-duration: 0.3s;
 
         &:hover {
           background-color: var(--primary-hover);
           cursor: pointer;
+          scale: 1.1;
         }
       }
     }

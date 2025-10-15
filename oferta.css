@@ -113,9 +113,11 @@ header {
       padding: 10px 20px;
       border-radius: 10px;
       flex-shrink: 0;
+      transition-duration: 0.3s;
 
       &:hover {
         background-color: var(--primary-dark);
+        scale: 1.1;
       }
     }
 
@@ -150,9 +152,11 @@ main {
     border-radius: 5px;
     height: 35px;
     cursor: pointer;
+    transition-duration: 0.3s;
 
     &:hover {
       background-color: var(--primary-hover);
+      scale: 1.1;
     }
   }
 
