@@ -172,7 +172,7 @@ main {
     }
   }
 
-  .search-results {
+  .job-listings {
     h2 {
       color: var(--text-primary);
       margin-bottom: 1rem;
