@@ -156,7 +156,7 @@ main {
       }
     }
 
-    div {
+    .filters-container {
       width: 100%;
       display: flex;
       justify-content: start;
@@ -186,6 +186,7 @@ main {
 
       .job-listing-card {
         display: flex;
+        justify-content: space-between;
         width: 100%;
         padding: 1rem;
 

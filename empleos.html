@@ -21,8 +21,6 @@
       <nav>
         <a href="./index.html">Inicio</a>
         <a href="">Empleos</a>
-        <a href="">Empresas</a>
-        <a href="">Salarios</a>
       </nav>
     </div>
     <div>
@@ -44,21 +42,21 @@
         </svg>
         <input type="text" placeholder="Buscar empleos por título, habilidad o empresa">
       </form>
-      <div>
-        <select name="Tecnología" id="Tecnología">
+      <div class="filters-container">
+        <select name="technology" id="technology-filter">
           <option value="">Tecnología</option>
           <option value="angular">Angular</option>
         </select>
-        <select name="Ubicación">
+        <select name="location" id="location-filter">
           <option value="">Ubicación</option>
           <option value="españa">España</option>
         </select>
-        <select name="Tipo de contrato">
+        <select name="contract" id="contract-filter">
           <option value="">Tipo de contrato</option>
           <option value="indefinido">Indefinido</option>
           <option value="temporal">Temporal</option>
         </select>
-        <select name="Nivel de experiencia">
+        <select name="experience" id="experience-filter">
           <option value="">Nivel de experiencia</option>
           <option value="1-3">1-3 años</option>
           <option value="2-5">2-5 años</option>
@@ -78,15 +76,24 @@
               comunicación
             </p>
           </aside>
+          <a href="/oferta.html" class="job-listing-button" href="./oferta.html">Aplicar</a>
+        </article>
+        <article class="job-listing-card">
+          <aside>
+            <h3>Analista de datos</h3>
+            <small>Data Driven Co. | Ciudad de México</small>
+            <p>Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y
+              herramientas de visualización. Se requiere conocimientos de SQL, Python y R.
+            </p>
+          </aside>
           <button class="job-listing-button" href="./oferta.html">Aplicar</button>
         </article>
         <article class="job-listing-card">
           <aside>
-            <h3>Ingeniero de Software</h3>
-            <small>Tech Solutions Inc. | Remoto</small>
-            <p>Buscamos un ingeniro de software con experiencia en desarrollo web y conocimientos en JavaScript, React y
-              Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de
-              comunicación
+            <h3>Desarrollador de Aplicaciones Móviles</h3>
+            <small>Mobile Apps Ltd. | Guadalajara</small>
+            <p>Buscamos un desarrolador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe
+              tener conocimientosen Swift, Kotlin y el desarrollo de interfaces de usuario.
             </p>
           </aside>
           <button class="job-listing-button" href="./oferta.html">Aplicar</button>
@@ -94,21 +101,10 @@
         <article class="job-listing-card">
           <aside>
             <h3>Ingeniero de Software</h3>
-            <small>Tech Solutions Inc. | Remoto</small>
-            <p>Buscamos un ingeniro de software con experiencia en desarrollo web y conocimientos en JavaScript, React y
-              Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de
-              comunicación
-            </p>
-          </aside>
-          <button class="job-listing-button" href="./oferta.html">Aplicar</button>
-        </article>
-        <article class="job-listing-card">
-          <aside>
-            <h3>Ingeniero de Software</h3>
-            <small>Tech Solutions Inc. | Remoto</small>
-            <p>Buscamos un ingeniro de software con experiencia en desarrollo web y conocimientos en JavaScript, React y
-              Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de
-              comunicación
+            <small>Cloud Services SA | Remoto</small>
+            <p>Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube,
+              automatización de procesos y herramientas de integración continua. Se requiere conocimientos en AWS, Azure
+              o GCP.
             </p>
           </aside>
           <button class="job-listing-button" href="./oferta.html">Aplicar</button>
