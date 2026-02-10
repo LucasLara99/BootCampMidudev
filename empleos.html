@@ -43,19 +43,29 @@
         <input type="text" placeholder="Buscar empleos por título, habilidad o empresa">
       </form>
       <div class="filters-container">
+        <!-- <label for="filter-technology">Tecnología</label> -->
         <select name="technology" id="technology-filter">
           <option value="">Tecnología</option>
-          <option value="angular">Angular</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="React">React</option>
+          <option value="Python">Python</option>
+          <option value="SQL">SQL</option>
+          <option value="Swift">Swift</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="AWS">AWS</option>
         </select>
+        <!-- <label for="filter-location">Ubicación</label> -->
         <select name="location" id="location-filter">
           <option value="">Ubicación</option>
           <option value="españa">España</option>
         </select>
+        <!-- <label for="filter-contract">Tipo de contrato</label> -->
         <select name="contract" id="contract-filter">
           <option value="">Tipo de contrato</option>
           <option value="indefinido">Indefinido</option>
           <option value="temporal">Temporal</option>
         </select>
+        <!-- <label for="filter-experience">Experiencia</label> -->
         <select name="experience" id="experience-filter">
           <option value="">Nivel de experiencia</option>
           <option value="1-3">1-3 años</option>
@@ -71,7 +81,8 @@
           <aside>
             <h3>Ingeniero de Software</h3>
             <small>Tech Solutions Inc. | Remoto</small>
-            <p>Buscamos un ingeniro de software con experiencia en desarrollo web y conocimientos en JavaScript, React y
+            <p class="job-description">Buscamos un ingeniro de software con experiencia en desarrollo web y
+              conocimientos en JavaScript, React y
               Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de
               comunicación
             </p>
@@ -82,7 +93,8 @@
           <aside>
             <h3>Analista de datos</h3>
             <small>Data Driven Co. | Ciudad de México</small>
-            <p>Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y
+            <p class="job-description">Estamos buscando un analista de datos con experiencia en el manejo de grandes
+              conjuntos de datos y
               herramientas de visualización. Se requiere conocimientos de SQL, Python y R.
             </p>
           </aside>
@@ -92,7 +104,8 @@
           <aside>
             <h3>Desarrollador de Aplicaciones Móviles</h3>
             <small>Mobile Apps Ltd. | Guadalajara</small>
-            <p>Buscamos un desarrolador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe
+            <p class="job-description">Buscamos un desarrolador de aplicaciones móviles con experiencia en iOS y/o
+              Android. El candidato debe
               tener conocimientosen Swift, Kotlin y el desarrollo de interfaces de usuario.
             </p>
           </aside>
@@ -102,7 +115,8 @@
           <aside>
             <h3>Ingeniero de Software</h3>
             <small>Cloud Services SA | Remoto</small>
-            <p>Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube,
+            <p class="job-description">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de
+              infraestructuras en la nube,
               automatización de procesos y herramientas de integración continua. Se requiere conocimientos en AWS, Azure
               o GCP.
             </p>

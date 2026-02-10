@@ -8,3 +8,17 @@ jobResults?.addEventListener('click', (event) => {
     element.disabled = true;
   }
 })
+
+const techFilter = document.querySelector('#technology-filter');
+const jobCards = document.querySelectorAll('.job-listing-card');
+techFilter.addEventListener('change', () => {
+  jobCards.forEach((jobOffer) => {
+    jobOffer.classList.remove('hidden')
+    const description = jobOffer.querySelector('.job-description').textContent
+    if (!description.includes(techFilter.value)) {
+      jobOffer.classList.add('hidden')
+    }
+  })
+})
+
+

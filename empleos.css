@@ -116,8 +116,7 @@ main {
     align-items: center;
 
     h2,
-    p,
-    select {
+    p {
       color: var(--text-primary);
     }
 
@@ -162,13 +161,6 @@ main {
       justify-content: start;
       margin-top: 1rem;
       gap: 1rem;
-
-      select {
-        font-family: system-ui;
-        background-color: var(--card-bg);
-        border-radius: 15px;
-        padding: 1rem;
-      }
     }
   }
 
@@ -229,6 +221,10 @@ main {
             scale: 1;
             pointer-events: none;
           }
+        }
+
+        &.hidden {
+          display: none;
         }
       }
 
