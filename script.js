@@ -10,15 +10,15 @@ jobResults?.addEventListener('click', (event) => {
 })
 
 const techFilter = document.querySelector('#technology-filter');
-const jobCards = document.querySelectorAll('.job-listing-card');
 techFilter.addEventListener('change', () => {
-  jobCards.forEach((jobOffer) => {
-    jobOffer.classList.remove('hidden')
-    const description = jobOffer.querySelector('.job-description').textContent
-    if (!description.includes(techFilter.value)) {
-      jobOffer.classList.add('hidden')
-    }
+  const filterValue = techFilter.value.toLowerCase()
+  const jobOffers = document.querySelectorAll('.job-listing-card');
+
+  jobOffers.forEach((offer) => {
+    const technologies = offer.dataset.technology.split(',').map(tech => tech.trim().toLowerCase())
+    const shouldShow = filterValue === "" || technologies.includes(filterValue)
+
+    offer.classList.toggle('hidden', !shouldShow)
   })
 })
-
 
