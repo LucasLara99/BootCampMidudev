@@ -45,29 +45,37 @@
       <div class="filters-container">
         <!-- <label for="filter-technology">Tecnología</label> -->
         <select name="technology" id="technology-filter">
-          <option value="">Tecnología</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="React">React</option>
-          <option value="Python">Python</option>
-          <option value="SQL">SQL</option>
+          <option value="">Tecnologías</option>
+          <hr/>
+          <optgroup label="Frontend">
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+          </optgroup>
+          <hr/>
+          <optgroup label="Backend">
+            <option value="Python">Python</option>
+            <option value="SQL">SQL</option>
+          </optgroup>
+          <hr/>
           <option value="Swift">Swift</option>
           <option value="Kotlin">Kotlin</option>
           <option value="AWS">AWS</option>
         </select>
         <!-- <label for="filter-location">Ubicación</label> -->
         <select name="location" id="location-filter">
-          <option value="">Ubicación</option>
-          <option value="españa">España</option>
-        </select>
-        <!-- <label for="filter-contract">Tipo de contrato</label> -->
-        <select name="contract" id="contract-filter">
-          <option value="">Tipo de contrato</option>
-          <option value="indefinido">Indefinido</option>
-          <option value="temporal">Temporal</option>
+          <option value="">Todas las ubicaciones</option>
+          <hr>
+          <optgroup label="México">
+            <option value="cdmx">Ciudad de México</option>
+            <option value="guadalajara">Guadalajara</option>
+          </optgroup>
+          <hr>
+          <option value="remoto">Remoto</option>
         </select>
         <!-- <label for="filter-experience">Experiencia</label> -->
         <select name="experience" id="experience-filter">
           <option value="">Nivel de experiencia</option>
+          <hr/>
           <option value="1-3">1-3 años</option>
           <option value="2-5">2-5 años</option>
           <option value="+5">+5 años</option>
@@ -77,7 +85,7 @@
     <section class="job-listings">
       <h2>Resultados de búsqueda</h2>
       <div>
-        <article class="job-listing-card" data-technology="javascript, react, node">
+        <article class="job-listing-card" data-technology="javascript, react, node" data-location="remoto">
           <aside>
             <h3>Ingeniero de Software</h3>
             <small>Tech Solutions Inc. | Remoto</small>
@@ -89,7 +97,7 @@
           </aside>
           <a href="/oferta.html" class="job-listing-button" href="./oferta.html">Aplicar</a>
         </article>
-        <article class="job-listing-card" data-technology="sql, python, r">
+        <article class="job-listing-card" data-technology="sql, python, r" data-location="cdmx">
           <aside>
             <h3>Analista de datos</h3>
             <small>Data Driven Co. | Ciudad de México</small>
@@ -100,7 +108,7 @@
           </aside>
           <button class="job-listing-button" href="./oferta.html">Aplicar</button>
         </article>
-        <article class="job-listing-card" data-technology="swift, kotlin">
+        <article class="job-listing-card" data-technology="swift, kotlin" data-location="guadalajara">
           <aside>
             <h3>Desarrollador de Aplicaciones Móviles</h3>
             <small>Mobile Apps Ltd. | Guadalajara</small>
@@ -111,7 +119,7 @@
           </aside>
           <button class="job-listing-button" href="./oferta.html">Aplicar</button>
         </article>
-        <article class="job-listing-card" data-technology="aws, azure, gcp">
+        <article class="job-listing-card" data-technology="aws, azure, gcp" data-location="remoto">
           <aside>
             <h3>Ingeniero de Software</h3>
             <small>Cloud Services SA | Remoto</small>

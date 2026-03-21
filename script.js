@@ -9,16 +9,26 @@ jobResults?.addEventListener('click', (event) => {
   }
 })
 
-const techFilter = document.querySelector('#technology-filter');
-techFilter.addEventListener('change', () => {
-  const filterValue = techFilter.value.toLowerCase()
-  const jobOffers = document.querySelectorAll('.job-listing-card');
+//Función para filtrar las ofertas de trabajo
+function Filter(filter, datasetName) {
+  filter.addEventListener('change', () => {
+    const filterValue = filter.value.toLowerCase()
+    const jobOffers = document.querySelectorAll('.job-listing-card');
 
-  jobOffers.forEach((offer) => {
-    const technologies = offer.dataset.technology.split(',').map(tech => tech.trim().toLowerCase())
-    const shouldShow = filterValue === "" || technologies.includes(filterValue)
-
-    offer.classList.toggle('hidden', !shouldShow)
+    jobOffers.forEach((offer) => {
+      const datasetInfo = offer.dataset[datasetName].split(',').map(element => element.trim().toLowerCase())
+      const shouldShow = filterValue === "" || datasetInfo.includes(filterValue)
+      //toggle añade hidden si condición es true. La quita si es false.
+      offer.classList.toggle('hidden', !shouldShow)
+    })
   })
-})
+}
+
+//Filtro de tecnología
+const techFilter = document.querySelector('#technology-filter');
+Filter(techFilter, 'technology')
+
+//Filtro de ubicación
+const locationFilter = document.querySelector('#location-filter');
+Filter(locationFilter, 'location')
 
