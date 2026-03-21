@@ -190,24 +190,26 @@ main {
     }
   }
 
+  .job-list-title {
+    color: white;
+  }
+
   .job-listings {
+    border: 1px solid var(--text-muted);
+    border-radius: 1rem;
+
     h2 {
       color: var(--text-primary);
       margin-bottom: 1rem;
     }
 
-    div {
+    .job-listing-card {
       display: flex;
-      flex-direction: column;
-      border: 1px solid var(--text-muted);
-      border-radius: 5px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem;
 
-      .job-listing-card {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 1rem;
-
+      aside {
         h3 {
           color: var(--text-primary);
           margin-bottom: 0.2rem;
@@ -223,40 +225,40 @@ main {
           color: var(--text-muted);
           margin: 1rem 0rem 2rem 0rem;
         }
+      }
 
-        .job-listing-button {
-          text-decoration: none;
-          color: var(--text-primary);
-          font-weight: 600;
-          background-color: var(--primary-light);
-          padding: 10px 20px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          height: 35px;
-          cursor: pointer;
-          transition-duration: 0.3s;
+      .job-listing-button {
+        text-decoration: none;
+        color: var(--text-primary);
+        font-weight: 600;
+        background-color: var(--primary-light);
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+        cursor: pointer;
+        transition-duration: 0.3s;
 
-          &:hover {
-            background-color: var(--primary-hover);
-            scale: 1.1;
-          }
-
-          &.is-applied {
-            background-color: #085314;
-            scale: 1;
-            pointer-events: none;
-          }
+        &:hover {
+          background-color: var(--primary-hover);
+          scale: 1.1;
         }
 
-        &.hidden {
-          display: none;
+        &.is-applied {
+          background-color: #085314;
+          scale: 1;
+          pointer-events: none;
         }
       }
 
-      article:not(:last-child) {
-        border-bottom: 1px solid var(--text-muted);
+      &.hidden {
+        display: none;
       }
+    }
+
+    article:not(:last-child) {
+      border-bottom: 1px solid var(--text-muted);
     }
   }
 }
