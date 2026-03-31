@@ -23,3 +23,14 @@ Filter(techFilter, "technology");
 //Filtro de ubicación
 const locationFilter = document.querySelector("#location-filter");
 Filter(locationFilter, "modalidad");
+
+const textFilter = document.querySelector("#text-filter")
+textFilter.addEventListener('input', () => {
+  const jobOffers = document.querySelectorAll(".job-listing-card")
+  const textFilterValue = textFilter.value.toLowerCase();
+  jobOffers.forEach((offer) => {
+    const description = offer.querySelector(".description").textContent.toLowerCase().trim()
+    const shouldShow = textFilterValue === "" || description.includes(textFilterValue)
+    offer.classList.toggle("hidden", !shouldShow)
+  })
+})

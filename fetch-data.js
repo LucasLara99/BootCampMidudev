@@ -17,7 +17,7 @@ fetch("./data.json")
         <aside>
           <h3>${job.titulo}</h3>
           <small>${job.empresa} | ${job.ubicacion}</small>
-          <p>${job.descripcion}</p>
+          <p class="description">${job.descripcion}</p>
         </aside>
         <button class="job-listing-button">Aplicar</button>
       `;
