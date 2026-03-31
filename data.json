@@ -22,7 +22,12 @@
     "ubicacion": "Ciudad de México",
     "descripcion": "Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.",
     "data": {
-      "technology": "python",
+      "technology": [
+        "sql",
+        "bbdd",
+        "python",
+        "r"
+      ],
       "modalidad": "cdmx",
       "nivel": "junior"
     }
@@ -46,7 +51,7 @@
     "ubicacion": "Remoto",
     "descripcion": "Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.",
     "data": {
-      "technology": "mobile",
+      "technology": "cloud",
       "modalidad": "remoto",
       "nivel": "mid-level"
     }
@@ -58,7 +63,7 @@
     "ubicacion": "Barcelona",
     "descripcion": "Estamos buscando un diseñador UX/UI con pasión por crear experiencias digitales excepcionales. Se requiere experiencia en Figma, diseño centrado en el usuario y colaboración con equipos de desarrollo.",
     "data": {
-      "technology": "mobile",
+      "technology": "UX/UI",
       "modalidad": "barcelona",
       "nivel": "mid-level"
     }
@@ -70,7 +75,7 @@
     "ubicacion": "Buenos Aires",
     "descripcion": "Se busca un administrador de bases de datos con experiencia en PostgreSQL y MySQL. El candidato deberá asegurar la disponibilidad, seguridad y rendimiento de las bases de datos de producción.",
     "data": {
-      "technology": "mobile",
+      "technology": "bbdd",
       "modalidad": "bsas",
       "nivel": "mid-level"
     }
@@ -82,7 +87,7 @@
     "ubicacion": "Remoto",
     "descripcion": "Buscamos un especialista en ciberseguridad con conocimientos en protección de infraestructuras, análisis de vulnerabilidades y respuesta ante incidentes. Se valorará experiencia con SIEM y certificaciones de seguridad.",
     "data": {
-      "technology": "mobile",
+      "technology": "ciberseguridad",
       "modalidad": "remoto",
       "nivel": "mid-level"
     }
@@ -94,7 +99,7 @@
     "ubicacion": "Madrid",
     "descripcion": "Estamos buscando un Product Manager con experiencia en la definición y lanzamiento de productos digitales. Se requiere capacidad analítica, liderazgo y conocimiento en metodologías ágiles.",
     "data": {
-      "technology": "mobile",
+      "technology": "Agile",
       "modalidad": "madrid",
       "nivel": "senior"
     }
@@ -142,7 +147,7 @@
     "ubicacion": "Lima",
     "descripcion": "Se busca ingeniero de QA con experiencia en automatización de pruebas utilizando herramientas como Selenium, Cypress o Playwright. Conocimiento deseado en CI/CD.",
     "data": {
-      "technology": "mobile",
+      "technology": "QA",
       "modalidad": "lima",
       "nivel": "mid-level"
     }
@@ -154,7 +159,7 @@
     "ubicacion": "Santiago de Chile",
     "descripcion": "Buscamos un administrador de sistemas con experiencia en Linux, Docker y monitoreo de servidores. Conocimiento en scripting Bash o Python será un plus.",
     "data": {
-      "technology": "mobile",
+      "technology": "Python",
       "modalidad": "santiago",
       "nivel": "mid-level"
     }
@@ -166,21 +171,9 @@
     "ubicacion": "Madrid",
     "descripcion": "Estamos buscando un Scrum Master con experiencia en metodologías ágiles y gestión de equipos multidisciplinarios. Certificación Scrum Master deseable.",
     "data": {
-      "technology": "mobile",
+      "technology": "agile",
       "modalidad": "madrid",
       "nivel": "mid-level"
-    }
-  },
-  {
-    "id": "a2f1d8c6-b72c-45f5-bcc5-5c1d1f39b0b1",
-    "titulo": "Soporte Técnico Nivel 2",
-    "empresa": "HelpDesk Pro",
-    "ubicacion": "Monterrey",
-    "descripcion": "Buscamos un técnico de soporte con habilidades en resolución de incidencias, redes y sistemas operativos. Se requiere atención al detalle y excelente trato con el usuario.",
-    "data": {
-      "technology": "mobile",
-      "modalidad": "monterrey",
-      "nivel": "junior"
     }
   }
 ]
