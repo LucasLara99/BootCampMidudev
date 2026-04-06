@@ -1,3 +1,12 @@
+function cleanLastBorder(jobOffers) {
+  jobOffers.forEach(offer => offer.classList.remove('last-visible'));
+  const visibles = Array.from(jobOffers).filter(offer => !offer.classList.contains('hidden'))
+  if (visibles.length > 0) {
+    const lastVisible = visibles[visibles.length - 1];
+    lastVisible.classList.add('last-visible');
+  }
+}
+
 //Función para filtrar las ofertas de trabajo
 function Filter(filter, datasetName) {
   filter.addEventListener("change", () => {
@@ -13,6 +22,8 @@ function Filter(filter, datasetName) {
       //toggle añade hidden si condición es true. La quita si es false.
       offer.classList.toggle("hidden", !shouldShow);
     });
+
+    cleanLastBorder(jobOffers);
   });
 }
 
@@ -28,6 +39,7 @@ Filter(locationFilter, "modalidad");
 const experienceFilter = document.querySelector("#experience-filter");
 Filter(experienceFilter, "nivel")
 
+//Filtro de texto
 const textFilter = document.querySelector("#text-filter")
 textFilter.addEventListener('input', () => {
   const jobOffers = document.querySelectorAll(".job-listing-card")
@@ -37,4 +49,5 @@ textFilter.addEventListener('input', () => {
     const shouldShow = textFilterValue === "" || description.includes(textFilterValue)
     offer.classList.toggle("hidden", !shouldShow)
   })
+  cleanLastBorder(jobOffers);
 })
