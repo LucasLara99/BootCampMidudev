@@ -41,7 +41,7 @@
     "data": {
       "technology": "mobile",
       "modalidad": "guadalajara",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -53,7 +53,7 @@
     "data": {
       "technology": "cloud",
       "modalidad": "remoto",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -65,7 +65,7 @@
     "data": {
       "technology": "UX/UI",
       "modalidad": "barcelona",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -77,7 +77,7 @@
     "data": {
       "technology": "bbdd",
       "modalidad": "bsas",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -89,7 +89,7 @@
     "data": {
       "technology": "ciberseguridad",
       "modalidad": "remoto",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -113,7 +113,7 @@
     "data": {
       "technology": "react",
       "modalidad": "valencia",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -149,7 +149,7 @@
     "data": {
       "technology": "QA",
       "modalidad": "lima",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -161,7 +161,7 @@
     "data": {
       "technology": "Python",
       "modalidad": "santiago",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   },
   {
@@ -173,7 +173,7 @@
     "data": {
       "technology": "agile",
       "modalidad": "madrid",
-      "nivel": "mid-level"
+      "nivel": "mid"
     }
   }
 ]

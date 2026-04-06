@@ -24,6 +24,10 @@ Filter(techFilter, "technology");
 const locationFilter = document.querySelector("#location-filter");
 Filter(locationFilter, "modalidad");
 
+//Filtro de nivel
+const experienceFilter = document.querySelector("#experience-filter");
+Filter(experienceFilter, "nivel")
+
 const textFilter = document.querySelector("#text-filter")
 textFilter.addEventListener('input', () => {
   const jobOffers = document.querySelectorAll(".job-listing-card")
