@@ -1,3 +1,4 @@
+//Función para quitar el borde al último elemento
 function cleanLastBorder(jobOffers) {
   jobOffers.forEach(offer => offer.classList.remove('last-visible'));
   const visibles = Array.from(jobOffers).filter(offer => !offer.classList.contains('hidden'))
@@ -7,49 +8,46 @@ function cleanLastBorder(jobOffers) {
   }
 }
 
-//Función para filtrar las ofertas de trabajo
-function Filter(filter, datasetName) {
-  filter.addEventListener("change", () => {
-    const filterValue = filter.value.toLowerCase();
-    const jobOffers = document.querySelectorAll(".job-listing-card");
-
-    jobOffers.forEach((offer) => {
-      const datasetInfo = offer.dataset[datasetName]
-        .split(",")
-        .map((element) => element.trim().toLowerCase());
-      const shouldShow =
-        filterValue === "" || datasetInfo.includes(filterValue);
-      //toggle añade hidden si condición es true. La quita si es false.
-      offer.classList.toggle("hidden", !shouldShow);
-    });
-
-    cleanLastBorder(jobOffers);
-  });
+//Función para identificar los visibles
+function shouldShowCalculator(filterValue, dataset) {
+  return filterValue === "" || dataset.includes(filterValue);
 }
 
-//Filtro de tecnología
-const techFilter = document.querySelector("#technology-filter");
-if (techFilter) Filter(techFilter, "technology");
+//Función que aplica los filtros
+function applyFilters() {
+  const techValue = document.querySelector('#technology-filter').value.toLowerCase()
+  const locationValue = document.querySelector('#location-filter').value.toLowerCase()
+  const experienceValue = document.querySelector('#experience-filter').value.toLowerCase()
+  const textValue = document.querySelector('#text-filter').value.toLowerCase()
 
-//Filtro de ubicación
-const locationFilter = document.querySelector("#location-filter");
-if (locationFilter) Filter(locationFilter, "modalidad");
+  const jobOffers = document.querySelectorAll(".job-listing-card")
+  jobOffers.forEach(offer => {
+    const techDataSetInfo = offer.dataset["technology"].split(",").map(el => el.trim().toLowerCase());
+    const locationDataSetInfo = offer.dataset["modalidad"].split(",").map(el => el.trim().toLowerCase());
+    const experienceDataSetInfo = offer.dataset["nivel"].split(",").map(el => el.trim().toLowerCase());
+    const description = offer.querySelector(".description").textContent.trim().toLowerCase();
 
-//Filtro de nivel
-const experienceFilter = document.querySelector("#experience-filter");
-if (experienceFilter) Filter(experienceFilter, "nivel")
+    const shouldShowTech = shouldShowCalculator(techValue, techDataSetInfo);
+    const shouldShowLocation = shouldShowCalculator(locationValue, locationDataSetInfo);
+    const shouldShowExperience = shouldShowCalculator(experienceValue, experienceDataSetInfo);
+    const shouldShowText = shouldShowCalculator(textValue, description);
 
-//Filtro de texto
-const textFilter = document.querySelector("#text-filter")
-if (textFilter) {
-  textFilter.addEventListener('input', () => {
-    const jobOffers = document.querySelectorAll(".job-listing-card")
-    const textFilterValue = textFilter.value.toLowerCase();
-    jobOffers.forEach((offer) => {
-      const description = offer.querySelector(".description").textContent.toLowerCase().trim()
-      const shouldShow = textFilterValue === "" || description.includes(textFilterValue)
-      offer.classList.toggle("hidden", !shouldShow)
-    })
-    cleanLastBorder(jobOffers);
+    const shouldShow = shouldShowTech && shouldShowLocation && shouldShowExperience && shouldShowText;
+    offer.classList.toggle('hidden', !shouldShow)
   })
+  cleanLastBorder(jobOffers);
 }
+
+const filters = [
+  { selector: "#technology-filter", event: "change" },
+  { selector: "#location-filter", event: "change" },
+  { selector: "#experience-filter", event: "change" },
+  { selector: "#text-filter", event: "input" }
+]
+
+filters.forEach(f => {
+  const element = document.querySelector(f.selector);
+  if (element) {
+    element.addEventListener(f.event, applyFilters)
+  }
+})
