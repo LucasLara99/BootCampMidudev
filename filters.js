@@ -29,25 +29,27 @@ function Filter(filter, datasetName) {
 
 //Filtro de tecnología
 const techFilter = document.querySelector("#technology-filter");
-Filter(techFilter, "technology");
+if (techFilter) Filter(techFilter, "technology");
 
 //Filtro de ubicación
 const locationFilter = document.querySelector("#location-filter");
-Filter(locationFilter, "modalidad");
+if (locationFilter) Filter(locationFilter, "modalidad");
 
 //Filtro de nivel
 const experienceFilter = document.querySelector("#experience-filter");
-Filter(experienceFilter, "nivel")
+if (experienceFilter) Filter(experienceFilter, "nivel")
 
 //Filtro de texto
 const textFilter = document.querySelector("#text-filter")
-textFilter.addEventListener('input', () => {
-  const jobOffers = document.querySelectorAll(".job-listing-card")
-  const textFilterValue = textFilter.value.toLowerCase();
-  jobOffers.forEach((offer) => {
-    const description = offer.querySelector(".description").textContent.toLowerCase().trim()
-    const shouldShow = textFilterValue === "" || description.includes(textFilterValue)
-    offer.classList.toggle("hidden", !shouldShow)
+if (textFilter) {
+  textFilter.addEventListener('input', () => {
+    const jobOffers = document.querySelectorAll(".job-listing-card")
+    const textFilterValue = textFilter.value.toLowerCase();
+    jobOffers.forEach((offer) => {
+      const description = offer.querySelector(".description").textContent.toLowerCase().trim()
+      const shouldShow = textFilterValue === "" || description.includes(textFilterValue)
+      offer.classList.toggle("hidden", !shouldShow)
+    })
+    cleanLastBorder(jobOffers);
   })
-  cleanLastBorder(jobOffers);
-})
+}
