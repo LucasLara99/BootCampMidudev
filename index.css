@@ -143,50 +143,18 @@ main {
       animation: hero-entry 1s;
     }
 
-    form {
-      display: flex;
-      background-color: var(--input-bg);
-      width: 50%;
-      min-width: 400px;
-      box-sizing: border-box;
-      height: 60px;
-      border-radius: 15px;
-      align-items: center;
-      gap: 1rem;
-      padding: 10px;
-      animation: hero-entry 1s;
+    a {
+      background-color: var(--primary-light);
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition-duration: 0.3s;
+      color: var(--text-primary);
+      font-weight: 600;
+      text-decoration: none;
 
-      svg {
-        flex: 1;
-      }
-
-      input {
-        flex: 10;
-        color: var(--text-muted);
-        background-color: var(--input-bg);
-        height: 100%;
-        border: none;
-        font-size: 15px;
-        padding: 10px;
-        outline: none;
-      }
-
-      button {
-        flex: 3;
-        color: var(--text-primary);
-        background-color: var(--primary-light);
-        border-radius: 10px;
-        height: 100%;
-        font-weight: 600;
-        font-size: 15px;
-        border: none;
-        transition-duration: 0.3s;
-
-        &:hover {
-          background-color: var(--primary-hover);
-          cursor: pointer;
-          scale: 1.1;
-        }
+      &:hover {
+        background-color: var(--primary-hover);
+        transform: scale(1.1);
       }
     }
   }
