@@ -151,6 +151,7 @@ main {
       color: var(--text-primary);
       font-weight: 600;
       text-decoration: none;
+      animation: hero-entry 1s;
 
       &:hover {
         background-color: var(--primary-hover);
