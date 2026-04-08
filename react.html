@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+  <title>DevJobs - Empleos</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Página de resultados de búsqueda" />
+  <link rel="stylesheet" href="./empleos.css" />
+  <link rel="icon" type="image/png" href="./assets/favicon.jpg">
+  <script type="module">
+    import React from "https://esm.sh/react?dev";
+    import ReactDOM from "https://esm.sh/react-dom/client?dev";
+
+    const titulo = React.createElement(
+      "button",
+      { onClick: () => alert('clic') },
+      "Clícame"
+    )
+
+    const rootEl = document.querySelector('#root');
+    const root = ReactDOM.createRoot(rootEl);
+    root.render(titulo)
+  </script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#1173d4"
+        class="icon icon-tabler icons-tabler-filled icon-tabler-briefcase-2">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M14 2a3 3 0 0 1 3 3v1h2a3 3 0 0 1 3 3v9a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-9a3 3 0 0 1 3 -3h2v-1a3 3 0 0 1 3 -3zm0 2h-4a1 1 0 0 0 -1 1v1h6v-1a1 1 0 0 0 -1 -1" />
+      </svg>
+      <h2>DevJobs</h2>
+      <nav>
+        <a href="./index.html">Inicio</a>
+        <a href="">Empleos</a>
+      </nav>
+    </div>
+    <div>
+      <devjobs-avatar service="github" username="LucasLara99" size="40"></devjobs-avatar>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section">
+      <h2>React.js primeros pasos</h2>
+      <div id="root"></div>
+    </section>
+  </main>
+  <footer>
+    <small>&copy; 2025 Lucas Lara. Todos los derechos reservados</small>
+  </footer>
+</body>
