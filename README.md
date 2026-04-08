@@ -14,24 +14,6 @@ A lo largo de este bootcamp, construiremos un proyecto completo **desde cero y p
 
 Este proyecto te permitirá consolidar todo lo aprendido y tener una aplicación real en tu portafolio.
 
-## 📺 La Plataforma
-
-En **[JSCamp.dev](https://jscamp.dev)** encontrarás todos los videos y contenido del bootcamp para que puedas revisarlo cuando quieras. El registro es gratis.
-Los videos y materiales se irán subiendo **poco a poco** a medida que avancemos en el bootcamp.
-
-### ¿Tiene certificado?
-
-Sí, existe un certificado opcional y muy limitado de pago que incluye:
-
-- 🎓 **Certificado Digital** - Certifica tus logros en el bootcamp
-- 📝 **Seguimiento de Ejercicios** - Revisaremos y corregiremos tus ejercicios
-- 💬 **Canal Exclusivo en Discord** - Comunidad premium y soporte directo
-- 🎥 **Directos Exclusivos** - Clases de repaso exclusivas con dudas y preguntas
-- 📄 **Revisión de tu CV** - Equipo de expertos revisan tu CV y te dan feedback
-- 🏢 **Workshop Presencial** - Entrada asegurada a los workshops de Barcelona y Madrid
-
-**Entra a [https://jscamp.dev](https://jscamp.dev), inicia sesión y consigue acceso.**
-
 ## 📚 Contenido del Bootcamp
 
 - **00** - HTML & CSS
@@ -40,21 +22,10 @@ Sí, existe un certificado opcional y muy limitado de pago que incluye:
 - **03** - Estado Global y React Router
 - **04** - Node.js
 - **05** - TypeScript
-- **06** - SQL
-- **07** - CI/CD
-- **08** - Docker
-
-## 💻 Requisitos de Instalación
-
-Antes de comenzar, asegúrate de tener instalado el siguiente software:
-
-- **Navegador moderno** - Chrome, Firefox, Edge o Safari actualizado
-- **[Visual Studio Code](https://code.visualstudio.com/)** - Editor de código (recomendado)
-- **[Extensión Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)** - Extensión para ver HTML/CSS
-- **[Node.js](https://nodejs.org/)** (versión 20 o superior) - Runtime de JavaScript
-- **[Git](https://git-scm.com/)** - Control de versiones
-- **[Docker](https://www.docker.com/)** - Para el módulo de Docker
-- **[Terminal Warp](https://midu.link/warp)** - Terminal con IA y Agentes
+- **06** - Integración de IA
+- **07** - SQL
+- **08** - CI/CD
+- **09** - Docker
 
 ## 👨‍💻 Instructor
 
