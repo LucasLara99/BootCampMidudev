@@ -72,11 +72,11 @@
     "id": "c1b65b42-68c5-4f1c-a8c2-8d52c5a7a5d1",
     "titulo": "Administrador de Bases de Datos",
     "empresa": "Secure Data Corp.",
-    "ubicacion": "Buenos Aires",
+    "ubicacion": "Valencia",
     "descripcion": "Se busca un administrador de bases de datos con experiencia en PostgreSQL y MySQL. El candidato deberá asegurar la disponibilidad, seguridad y rendimiento de las bases de datos de producción.",
     "data": {
       "technology": "bbdd",
-      "modalidad": "bsas",
+      "modalidad": "valencia",
       "nivel": "mid"
     }
   },

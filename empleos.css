@@ -198,6 +198,10 @@ main {
     border: 1px solid var(--text-muted);
     border-radius: 1rem;
 
+    .empty-search-msg {
+      color: var(--text-secondary);
+    }
+
     h2 {
       color: var(--text-primary);
       margin-bottom: 1rem;
@@ -263,8 +267,13 @@ main {
     }
 
   }
+
   .job-listings .job-listing-card:nth-last-child(1) {
     border-bottom: none;
+  }
+
+  .job-listings .no-border {
+    border: none;
   }
 }
 
