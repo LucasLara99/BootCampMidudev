@@ -10,15 +10,43 @@
     import React from "https://esm.sh/react?dev";
     import ReactDOM from "https://esm.sh/react-dom/client?dev";
 
-    const titulo = React.createElement(
-      "button",
-      { onClick: () => alert('clic') },
-      "Clícame"
-    )
+    window.React = React;
+    window.ReactDOM = ReactDOM;
+  </script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function JobCard({ data, titulo, empresa, ubicacion, descripcion }) {
+      return (
+        <article
+          className="job-listing-card"
+          data-modalidad={data?.modalidad}
+          data-technology={data?.technology}
+          data-nivel={data?.nivel}
+        >
+          <aside>
+            <h3>{titulo}</h3>
+            <small>{empresa} | {ubicacion}</small>
+            <p class="description">{descripcion}</p>
+          </aside>
+          <button className="job-listing-button">Aplicar</button>
+        </article>
+      )
+    }
 
+    function App() {
+      return (
+        <div className="job-listings">
+          <JobCard
+            titulo="Diseñador UX/UI"
+            empresa="Creative Minds Studio"
+            ubicacion="Remoto"
+            descripcion="Se busca un administrador de bases de datos con experiencia en PostgreSQL y MySQL. El candidato deberá asegurar la disponibilidad, seguridad y rendimiento de las bases de datos de producción." />
+        </div>
+      )
+    }
     const rootEl = document.querySelector('#root');
     const root = ReactDOM.createRoot(rootEl);
-    root.render(titulo)
+    root.render(<App />)
   </script>
 </head>
 
