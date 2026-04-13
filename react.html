@@ -16,6 +16,9 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function JobCard({ data, titulo, empresa, ubicacion, descripcion }) {
+      function handleClick() {
+        return alert('Has aplicado a la oferta ' + titulo)
+      }
       return (
         <article
           className="job-listing-card"
@@ -28,7 +31,10 @@
             <small>{empresa} | {ubicacion}</small>
             <p class="description">{descripcion}</p>
           </aside>
-          <button className="job-listing-button">Aplicar</button>
+          <button
+            className="job-listing-button"
+            onClick={handleClick}
+          >Aplicar</button>
         </article>
       )
     }
