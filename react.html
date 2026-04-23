@@ -16,8 +16,12 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function JobCard({ data, titulo, empresa, ubicacion, descripcion }) {
+      const [isApplied, setIsApplied] = React.useState(false)
+      const text = isApplied ? 'Aplicado!' : 'Aplicar';
+      const buttonClass = isApplied ? 'is-applied' : '';
+
       function handleClick() {
-        return alert('Has aplicado a la oferta ' + titulo)
+        setIsApplied(!isApplied)
       }
       return (
         <article
@@ -32,9 +36,10 @@
             <p class="description">{descripcion}</p>
           </aside>
           <button
-            className="job-listing-button"
+            className={`job-listing-button ${buttonClass}`}
             onClick={handleClick}
-          >Aplicar</button>
+            disabled={isApplied}
+          >{text}</button>
         </article>
       )
     }
