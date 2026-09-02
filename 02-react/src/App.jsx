@@ -1,6 +1,7 @@
 import './components/footer/Footer'
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
+import data from './data.json'
 
 function App() {
 

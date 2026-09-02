@@ -1,4 +1,6 @@
 import './Header.css'
+import '../avatar/Avatar'
+import Avatar from '../avatar/Avatar'
 
 function Header() {
    return (
@@ -17,7 +19,7 @@ function Header() {
             </nav>
          </div>
          <div>
-            <devjobs-avatar service="github" username="LucasLara99" size="40"></devjobs-avatar>
+            <Avatar/>
          </div>
       </header>
    )

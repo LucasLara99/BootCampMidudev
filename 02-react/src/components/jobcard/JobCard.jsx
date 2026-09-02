@@ -1,1 +1,9 @@
-//Crear componente, importarlo y usarlo en app.jsx
+import './JobCard.css'
+
+function JobCard () {
+   return (
+      <></>
+   )
+}
+
+export default JobCard
