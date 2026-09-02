@@ -30,14 +30,15 @@
 }
 
 body {
-    font-family: system-ui;
     background-color: var(--background);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-family: system-ui;
+    min-height: 100vh;
 }
 
-header {
+.main-header {
     position: sticky;
     top: 0px;
     display: flex;
@@ -74,156 +75,181 @@ header {
         justify-content: center;
         gap: 2rem;
     }
-
-    div:nth-child(2) {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        font-weight: 600;
-
-        a {
-            background-color: var(--primary-hover);
-            padding: 10px 20px;
-            border-radius: 10px;
-            transition-duration: 0.3s;
-
-            &:hover {
-                background-color: var(--primary-dark);
-                transform: scale(1.1);
-            }
-        }
-
-        img {
-            object-fit: cover;
-            width: 35px;
-            border-radius: 100%;
-        }
-    }
 }
 
 main {
     display: flex;
+    width: 80%;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    margin: 0 auto;
 
-    section:nth-child(1) {
-        width: 90%;
-        height: calc(100dvh - 80px);
+    .hero-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        gap: 1rem;
-        cursor: default;
+        width: 100%;
+        margin-bottom: 2em;
 
-        video {
-            position: absolute;
+        h2 {
+            font-size: 35px;
+            padding: 2.5rem 1rem 1rem 1rem;
+        }
+
+        >p {
+            font-size: 16px;
+            padding-bottom: 2rem;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            background-color: var(--input-bg);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            left: 0;
-            right: 0;
-            mask-image: linear-gradient(to bottom, rgba(16, 25, 34, 1) 5%, rgba(16, 25, 34, 0) 90%);
+            min-width: 400px;
+            height: 60px;
+            border-radius: 15px;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 20px;
+
+            input {
+                color: var(--text-muted);
+                background-color: var(--input-bg);
+                height: 100%;
+                width: 100%;
+                border: none;
+                font-size: 15px;
+                padding: 10px;
+                outline: none;
+            }
         }
 
-        h1 {
-            color: var(--text-primary);
-            font-size: 60px;
-            font-weight: 750;
-            animation: hero-entry 1s;
-        }
+        .filters-container {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            margin-top: 1rem;
+            gap: 1rem;
 
-        p {
-            color: var(--text-secondary);
-            font-size: 20px;
-            margin-bottom: 1.5rem;
-            animation: hero-entry 1s;
-        }
+            select {
+                padding: 0.625rem 1.25rem;
+                background-color: #242d3a;
+                border: 0;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+                color: #ddd;
+                cursor: pointer;
+                transition: all 0.4s;
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 0.5rem center;
+                padding-right: 2.5rem;
 
-        a {
-            background-color: var(--primary-light);
-            padding: 10px 20px;
-            border-radius: 10px;
-            transition-duration: 0.3s;
-            color: var(--text-primary);
-            font-weight: 600;
-            text-decoration: none;
-            animation: hero-entry 1s;
+                &:hover {
+                    background-color: var(--primary-hover);
+                    color: white;
+                }
 
-            &:hover {
-                background-color: var(--primary-hover);
-                transform: scale(1.1);
+                &:focus {
+                    outline: 2px solid #1173d4;
+                    outline-offset: 2px;
+                }
             }
         }
     }
+    
+    .job-listings {
+        border: 1px solid var(--text-muted);
+        border-radius: 1rem;
 
-    section:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-
-        header {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-            h2 {
-                font-size: 35px;
-            }
-
-            p {
-                font-size: 20px;
-                color: var(--text-secondary);
-                width: 70%;
-            }
+        .empty-search-msg {
+            color: var(--text-secondary);
         }
 
-        footer {
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+        h2 {
             color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
 
-            article {
-                background-color: var(--primary-dark);
-                border-radius: 15px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 3rem;
-                gap: 1rem;
+        .job-listing-card {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem;
+            border-bottom: 1px solid var(--text-muted);
+
+            aside {
+                h3 {
+                    color: var(--text-primary);
+                    margin-bottom: 0.2rem;
+                }
+
+                p {
+                    color: var(--text-secondary);
+                    margin-top: 1rem;
+                    line-height: 23px;
+                }
+
+                small {
+                    color: var(--text-muted);
+                    margin: 1rem 0rem 2rem 0rem;
+                }
+            }
+
+            .job-listing-button {
+                text-decoration: none;
+                color: var(--text-primary);
+                font-weight: 600;
+                background-color: var(--primary-light);
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                height: 35px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+
+                &:hover {
+                    background-color: var(--primary-hover);
+                    scale: 1.1;
+                }
+
+                &.is-applied {
+                    background-color: #085314;
+                    scale: 1;
+                    pointer-events: none;
+                }
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            &.last-visible {
+                border-bottom: none;
             }
         }
+
+    }
+
+    .job-listings .job-listing-card:nth-last-child(1) {
+        border-bottom: none;
+    }
+
+    .job-listings .no-border {
+        border: none;
     }
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: var(--text-muted);
-    height: 50px;
-    margin-top: 5rem;
-}
-
-@keyframes hero-entry {
-    from {
-        opacity: 0%;
-        scale: 100%;
-    }
-
-    to {
-        opacity: 100%;
-        scale: 100%;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--text-muted);
+  height: 50px;
+  margin-top: 5rem;
 }

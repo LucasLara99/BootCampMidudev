@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="main-header">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#1173d4"
             className="icon icon-tabler icons-tabler-filled icon-tabler-briefcase-2">
