@@ -1,0 +1,1 @@
+//Crear componente, importarlo y usarlo en app.jsx
