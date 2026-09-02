@@ -1,6 +1,7 @@
 import './components/footer/Footer'
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
+import Pagination from './components/pagination/Pagination'
 import data from './data.json'
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
             <h2 className="job-list-title">Resultados de búsqueda</h2>
             <section className="job-listings">
             </section>
+            <Pagination />
          </main>
          <Footer />
       </>
