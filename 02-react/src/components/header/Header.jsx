@@ -1,8 +1,7 @@
 import './Header.css'
-import '../avatar/Avatar'
-import Avatar from '../avatar/Avatar'
+import { Avatar } from '../avatar/Avatar.jsx'
 
-function Header() {
+export function Header() {
    return (
       <header className="main-header">
          <div>
@@ -19,10 +18,8 @@ function Header() {
             </nav>
          </div>
          <div>
-            <Avatar/>
+            <Avatar />
          </div>
       </header>
    )
 }
-
-export default Header

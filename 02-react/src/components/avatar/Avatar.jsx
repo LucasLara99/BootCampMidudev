@@ -1,4 +1,4 @@
-function Avatar({
+export function Avatar({
    service = "github",
    userName = "LucasLara99",
    size = 40
@@ -20,5 +20,3 @@ function Avatar({
       />
    )
 }
-
-export default Avatar

@@ -1,6 +1,6 @@
 import './JobsList.css'
 
-function JobsList() {
+export function JobsList() {
    return (
       <>
          <h2 className="job-list-title">Resultados de búsqueda</h2>
@@ -9,5 +9,3 @@ function JobsList() {
       </>
    )
 }
-
-export default JobsList

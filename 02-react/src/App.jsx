@@ -1,12 +1,11 @@
-import './components/footer/Footer'
-import Footer from './components/footer/Footer'
-import Header from './components/header/Header'
-import JobsList from './components/jobs-list/JobsList'
-import Pagination from './components/pagination/Pagination'
-import SearchFormSection from './components/search-form-section/SearchFormSection'
+import { Footer } from './components/footer/Footer.jsx'
+import { Header } from './components/header/Header.jsx'
+import { JobsList } from './components/jobs-list/JobsList.jsx'
+import { Pagination } from './components/pagination/Pagination.jsx'
+import { SearchFormSection } from './components/search-form-section/SearchFormSection.jsx'
 import data from './data.json'
 
-function App() {
+export function App() {
 
    return (
       <>
@@ -20,5 +19,3 @@ function App() {
       </>
    )
 }
-
-export default App

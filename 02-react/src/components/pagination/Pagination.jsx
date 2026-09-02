@@ -1,6 +1,6 @@
 import './Pagination.css'
 
-function Pagination() {
+export function Pagination() {
    return (
       <nav className="pagination">
          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
@@ -22,5 +22,3 @@ function Pagination() {
       </nav>
    )
 }
-
-export default Pagination

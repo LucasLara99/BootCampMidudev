@@ -1,6 +1,6 @@
 import './SearchFormSection.css'
 
-function SearchFormSection() {
+export function SearchFormSection() {
    return (
       <section className="hero-section">
          <h2>Encuentra tu próximo trabajo</h2>
@@ -67,5 +67,3 @@ function SearchFormSection() {
       </section>
    )
 }
-
-export default SearchFormSection
