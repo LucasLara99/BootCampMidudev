@@ -7,13 +7,17 @@ import data from './data.json'
 
 export function App() {
 
+   const handlePageChange = (page) => {
+      console.log('Cambiando a la página: ', page)
+   }
+
    return (
       <>
          <Header />
          <main>
             <SearchFormSection />
             <JobsList />
-            <Pagination />
+            <Pagination onPageChange={handlePageChange} />
          </main>
          <Footer />
       </>
