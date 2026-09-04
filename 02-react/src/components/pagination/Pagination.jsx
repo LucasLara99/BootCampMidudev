@@ -21,7 +21,7 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
       }
    }
 
-   const handlePageChange = (event, page) => {
+   const handlePageClick = (event, page) => {
       event.preventDefault()
       if (page !== currentPage) {
          onPageChange(page)
@@ -42,7 +42,8 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
             <a
                href='#'
                className={page === currentPage ? 'is-active' : ''}
-               onClick={(event) => handlePageChange(event, page)}
+               onClick={(event) => handlePageClick(event, page)}
+               key={page}
             >
                {page}
             </a>

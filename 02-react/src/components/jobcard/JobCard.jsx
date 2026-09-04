@@ -4,13 +4,13 @@ export function JobCard({ job }) {
 
    const { titulo, empresa, ubicacion, descripcion, data } = job
    return (
-      <article>
+      <article className='job-listing-card'>
          <aside>
-            <h3>${titulo}</h3>
-            <small>${empresa} | ${ubicacion}</small>
-            <p class="description">${descripcion}</p>
+            <h3>{titulo}</h3>
+            <small>{empresa} | {ubicacion}</small>
+            <p className="description">{descripcion}</p>
          </aside>
-         <button class="job-listing-button">Aplicar</button>
+         <button className="job-listing-button">Aplicar</button>
       </article>
    )
 }
