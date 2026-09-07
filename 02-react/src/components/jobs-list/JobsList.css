@@ -1,4 +1,8 @@
-.job-list-title{
+.job-list-section {
+   width: 100%;
+}
+
+.job-list-title {
    margin-block: 1em 2em;
 }
 
