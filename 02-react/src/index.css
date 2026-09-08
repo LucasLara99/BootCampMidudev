@@ -32,10 +32,13 @@
 body {
    background-color: var(--background);
    color: var(--text-primary);
-   display: flex;
-   flex-direction: column;
    font-family: system-ui;
-   min-height: 100vh;
+}
+
+#root {
+   display: grid;
+   grid-template-rows: 70px 1fr auto;
+   min-height: 100dvh;
 }
 
 main {

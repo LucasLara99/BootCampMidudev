@@ -56,3 +56,7 @@
       border-bottom: none;
    }
 }
+
+.job-listing-card:nth-last-child(1) {
+   border-bottom: none;
+}
