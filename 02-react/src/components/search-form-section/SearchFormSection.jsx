@@ -1,11 +1,21 @@
+import { useId } from 'react'
 import './SearchFormSection.css'
 
 export function SearchFormSection() {
+   const idText = useId()
+   const idTechnology = useId()
+   const idLocation = useId()
+   const idExperience = useId()
+   const handleSubmit = (event) => {
+      event.preventDefault()
+      console.log('enviando')
+   }
+
    return (
       <section className="hero-section">
          <h2>Encuentra tu próximo trabajo</h2>
          <p>Explora miles de oportunidades en el sector tecnológico</p>
-         <form role="search">
+         <form role="search" onSubmit={handleSubmit}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                className="icon icon-tabler icons-tabler-outline icon-tabler-search">
@@ -13,10 +23,11 @@ export function SearchFormSection() {
                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                <path d="M21 21l-6 -6" />
             </svg>
-            <input id="text-filter" type="text" placeholder="Buscar empleos por título, habilidad o empresa" />
+            <input id={idText} type="text" placeholder="Buscar empleos por título, habilidad o empresa" />
+            <button type='submit' className='search-button'>Buscar</button>
          </form>
          <div className="filters-container">
-            <select name="technology" id="technology-filter">
+            <select name="technology" id={idTechnology}>
                <option value="">Todas las tecnologías</option>
                <hr />
                <optgroup label="Frontend">
@@ -38,7 +49,7 @@ export function SearchFormSection() {
                <option value="agile">Agile</option>
                <option value="qa">QA</option>
             </select>
-            <select name="location" id="location-filter">
+            <select name="location" id={idLocation}>
                <option value="">Todas las ubicaciones</option>
                <hr />
                <optgroup label="Latinoamérica">
@@ -56,7 +67,7 @@ export function SearchFormSection() {
                <hr />
                <option value="remoto">Remoto</option>
             </select>
-            <select name="experience" id="experience-filter">
+            <select name="experience" id={idExperience}>
                <option value="">Niveles de experiencia</option>
                <hr />
                <option value="junior">Junior</option>
