@@ -18,52 +18,54 @@
 
    form {
       display: flex;
-      justify-content: center;
-      background-color: var(--input-bg);
+      flex-direction: column;
+      gap: 1em;
       width: 100%;
-      min-width: 400px;
-      height: 60px;
-      border-radius: 15px;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 20px;
 
-      input {
-         color: var(--text-muted);
-         background-color: var(--input-bg);
-         height: 100%;
+      .search-container {
+         display: flex;
+         align-items: center;
          width: 100%;
-         border: none;
-         font-size: 15px;
-         padding: 10px;
-         outline: none;
-      }
-
-      .search-button {
-         text-decoration: none;
-         color: var(--text-primary);
-         font-weight: 600;
-         background-color: var(--primary);
-         padding: 10px 20px;
-         font-size: 16px;
-         border: none;
          border-radius: 15px;
-         height: 40px;
-         cursor: pointer;
-         transition-duration: 0.3s;
+         padding-block: 5px;
+         padding-inline: 15px 5px;
+         background-color: var(--input-bg);
 
-         &:hover {
-            background-color: var(--primary-hover);
+         input {
+            background-color: var(--input-bg);
+            color: var(--text-muted);
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 15px;
+            padding: 10px;
+            outline: none;
+         }
+
+         .search-button {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            background-color: var(--primary);
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 15px;
+            height: 40px;
+            cursor: pointer;
+            transition-duration: 0.3s;
+
+            &:hover {
+               background-color: var(--primary-hover);
+            }
          }
       }
+
    }
 
    .filters-container {
-      width: 100%;
       display: flex;
-      justify-content: start;
-      margin-top: 1rem;
-      gap: 1rem;
+      gap: 1em;
 
       select {
          padding: 0.625rem 1.25rem;
