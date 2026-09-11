@@ -10,17 +10,34 @@ const RESULTS_PER_PAGE = 3
 
 export function App() {
    const [currentPage, setCurrentPage] = useState(1)
-   const totalPages = Math.ceil(jobsData.length / RESULTS_PER_PAGE)
-   const pagedResults = jobsData.slice(
+   const [textToFilter, setTextToFilter] = useState('')
+
+   const jobsWithTextFilter = textToFilter === ''
+      ? jobsData
+      : jobsData.filter(job => {
+         return job.titulo.toLowerCase().includes(textToFilter.toLowerCase())
+      })
+
+   const pagedResults = jobsWithTextFilter.slice(
       (currentPage - 1) * RESULTS_PER_PAGE,
       RESULTS_PER_PAGE * currentPage
    )
+
+   const totalPages = Math.ceil(jobsWithTextFilter.length / RESULTS_PER_PAGE)
+
+   const handleTextFilter = (newTextToFilter) => {
+      setTextToFilter(newTextToFilter)
+      setCurrentPage(1)
+   }
+   const handleSearch = () => {
+
+   }
 
    return (
       <>
          <Header />
          <main>
-            <SearchFormSection />
+            <SearchFormSection onTextFilter={handleTextFilter} onSearch={handleSearch} />
             <JobsList jobs={pagedResults} />
             <Pagination
                currentPage={currentPage}

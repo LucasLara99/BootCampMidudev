@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import './SearchFormSection.css'
 
-export function SearchFormSection() {
+export function SearchFormSection({ onSearch, onTextFilter }) {
    const idText = useId()
    const idTechnology = useId()
    const idLocation = useId()
@@ -18,7 +18,12 @@ export function SearchFormSection() {
          experience: formData.get(idExperience)
       }
 
-      console.log(filters)
+      onSearch(filters)
+   }
+
+   const handleTextChange = (event) => {
+      const text = event.target.value
+      onTextFilter(text)
    }
 
    return (
@@ -37,6 +42,7 @@ export function SearchFormSection() {
                <input
                   name={idText} id='search-filter' required type="text"
                   placeholder="Buscar empleos por título, habilidad o empresa"
+                  onChange={handleTextChange}
                />
                <button type='submit' className='search-button'>Buscar</button>
             </div>
