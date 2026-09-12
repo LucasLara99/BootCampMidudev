@@ -14,7 +14,7 @@ export function JobsList({ jobs }) {
                      <JobCard key={job.id} job={job} />
                   ))}
                </div>
-            ) : (<i className={styles.noData}>No se han encontrado resultado</i>)
+            ) : (<i className={styles.noData}>No se han encontrado resultados</i>)
          }
       </section>
    )

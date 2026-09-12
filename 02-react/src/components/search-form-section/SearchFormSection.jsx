@@ -3,10 +3,14 @@ import './SearchFormSection.css'
 
 export function SearchFormSection({ onSearch, onTextFilter }) {
    const [isActive, setIsActive] = useState(false)
+   const [technologyFilter, setTechnologyFilter] = useState('')
+   const [locationFilter, setLocationFilter] = useState('')
+   const [experienceFilter, setExperienceFilter] = useState('')
    const idText = useId()
    const idTechnology = useId()
    const idLocation = useId()
    const idExperience = useId()
+   const isSearchButtonActive = (technologyFilter !== '') || (locationFilter !== '') || (experienceFilter !== '')
 
    const handleSubmit = (event) => {
       event.preventDefault()
@@ -18,6 +22,18 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
          experience: formData.get(idExperience)
       }
       onSearch(filters)
+   }
+
+   const handleFilterChange = (event) => {
+      if (event.target.id === 'technology-filter') {
+         setTechnologyFilter(event.target.value)
+      }
+      if (event.target.id === 'location-filter') {
+         setLocationFilter(event.target.value)
+      }
+      if (event.target.id === 'experience-filter') {
+         setExperienceFilter(event.target.value)
+      }
    }
 
    const handleTextChange = (event) => {
@@ -54,10 +70,10 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                />
-               <button type='submit' className='search-button'>Buscar</button>
+               <button type='submit' className={isSearchButtonActive ? 'search-button is-active' : 'search-button'}>Buscar</button>
             </div>
             <div className="filters-container">
-               <select name={idTechnology} id='technology-filter'>
+               <select name={idTechnology} onChange={handleFilterChange} id='technology-filter' className={technologyFilter !== '' ? 'has-data' : ''}>
                   <option value="">Todas las tecnologías</option>
                   <hr />
                   <optgroup label="Frontend">
@@ -79,7 +95,7 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   <option value="agile">Agile</option>
                   <option value="qa">QA</option>
                </select>
-               <select name={idLocation} id='location-filter'>
+               <select name={idLocation} onChange={handleFilterChange} id='location-filter' className={locationFilter !== '' ? 'has-data' : ''}>
                   <option value="">Todas las ubicaciones</option>
                   <hr />
                   <optgroup label="Latinoamérica">
@@ -97,7 +113,7 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   <hr />
                   <option value="remoto">Remoto</option>
                </select>
-               <select name={idExperience} id='experience-filter'>
+               <select name={idExperience} onChange={handleFilterChange} id='experience-filter' className={experienceFilter !== '' ? 'has-data' : ''}>
                   <option value="">Niveles de experiencia</option>
                   <hr />
                   <option value="junior">Junior</option>

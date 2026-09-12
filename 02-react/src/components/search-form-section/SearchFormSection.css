@@ -51,19 +51,28 @@
 
          .search-button {
             text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            background-color: var(--primary);
+            font-weight: 500;
             padding: 10px 20px;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             height: 40px;
-            cursor: pointer;
-            transition-duration: 0.3s;
+            pointer-events: none;
+            background-color: var(--primary);
+            color: var(--text-muted);
 
-            &:hover {
-               background-color: var(--primary-hover);
+
+            &.is-active {
+               background-color: var(--primary-light);
+               color: white;
+               font-weight: 600;
+               pointer-events: all;
+               cursor: pointer;
+               transition-duration: 0.2s;
+
+               &:hover {
+                  scale: 1.1;
+               }
             }
          }
       }
@@ -89,15 +98,18 @@
          background-position: right 0.5rem center;
          padding-right: 2.5rem;
 
-         &:hover {
-            background-color: var(--primary-hover);
-            color: white;
+         &:focus &:hover {
+            outline: 2px solid #1173d4;
          }
 
-         &:focus {
-            outline: 2px solid #1173d4;
-            outline-offset: 2px;
+         &:hover {
+            outline: 1px solid #1173d4;
          }
+      }
+
+      .has-data {
+         background-color: var(--primary-hover);
+         color: white;
       }
    }
 }
