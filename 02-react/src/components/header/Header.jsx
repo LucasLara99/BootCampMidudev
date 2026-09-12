@@ -13,8 +13,8 @@ export function Header() {
             </svg>
             <h2>DevJobs</h2>
             <nav>
-               <a href="./index.html">Inicio</a>
-               <a href="">Empleos</a>
+               <a href="/">Inicio</a>
+               <a href="/search">Empleos</a>
             </nav>
          </div>
          <div>
