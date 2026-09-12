@@ -48,33 +48,6 @@
          .is-active {
             border-color: var(--text-muted);
          }
-
-         .search-button {
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            height: 40px;
-            pointer-events: none;
-            background-color: var(--primary);
-            color: var(--text-muted);
-
-
-            &.is-active {
-               background-color: var(--primary-light);
-               color: white;
-               font-weight: 600;
-               pointer-events: all;
-               cursor: pointer;
-               transition-duration: 0.2s;
-
-               &:hover {
-                  scale: 1.1;
-               }
-            }
-         }
       }
 
    }
