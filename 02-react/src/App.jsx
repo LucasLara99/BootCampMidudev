@@ -11,10 +11,37 @@ const RESULTS_PER_PAGE = 3
 export function App() {
    const [currentPage, setCurrentPage] = useState(1)
    const [textToFilter, setTextToFilter] = useState('')
+   const [filters, setFilters] = useState({
+      technology: '',
+      location: '',
+      experience: ''
+   })
+
+   const handleTextFilter = (newTextToFilter) => {
+      setTextToFilter(newTextToFilter)
+      setCurrentPage(1)
+   }
+
+   const handleSearch = (newFilters) => {
+      setFilters({
+         technology: newFilters.technology,
+         location: newFilters.location,
+         experience: newFilters.experience
+      })
+      setCurrentPage(1)
+   }
+
+   const jobsWithFilters = jobsData.filter((job) => {
+      return (
+         (filters.technology === '' || filters.technology.toLowerCase() === job.data.technology.toLowerCase()) &&
+         (filters.location === '' || filters.location.toLowerCase() === job.ubicacion.toLowerCase()) &&
+         (filters.experience === '' || filters.experience.toLowerCase() === job.data.nivel.toLowerCase())
+      )
+   })
 
    const jobsWithTextFilter = textToFilter === ''
-      ? jobsData
-      : jobsData.filter(job => {
+      ? jobsWithFilters
+      : jobsWithFilters.filter(job => {
          return job.titulo.toLowerCase().includes(textToFilter.toLowerCase())
       })
 
@@ -24,14 +51,6 @@ export function App() {
    )
 
    const totalPages = Math.ceil(jobsWithTextFilter.length / RESULTS_PER_PAGE)
-
-   const handleTextFilter = (newTextToFilter) => {
-      setTextToFilter(newTextToFilter)
-      setCurrentPage(1)
-   }
-   const handleSearch = () => {
-
-   }
 
    return (
       <>

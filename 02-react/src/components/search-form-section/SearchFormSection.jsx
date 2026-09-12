@@ -9,7 +9,6 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
 
    const handleSubmit = (event) => {
       event.preventDefault()
-
       const formData = new FormData(event.target)
       const filters = {
          search: formData.get(idText),
@@ -17,7 +16,6 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
          location: formData.get(idLocation),
          experience: formData.get(idExperience)
       }
-
       onSearch(filters)
    }
 
@@ -40,7 +38,7 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   <path d="M21 21l-6 -6" />
                </svg>
                <input
-                  name={idText} id='search-filter' required type="text"
+                  name={idText} id='search-filter' type="text"
                   placeholder="Buscar empleos por título, habilidad o empresa"
                   onChange={handleTextChange}
                />
