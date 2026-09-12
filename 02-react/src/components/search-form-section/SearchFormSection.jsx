@@ -1,7 +1,8 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import './SearchFormSection.css'
 
 export function SearchFormSection({ onSearch, onTextFilter }) {
+   const [isActive, setIsActive] = useState(false)
    const idText = useId()
    const idTechnology = useId()
    const idLocation = useId()
@@ -24,6 +25,14 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
       onTextFilter(text)
    }
 
+   const handleFocus = () => {
+      setIsActive(true)
+   }
+
+   const handleBlur = () => {
+      setIsActive(false)
+   }
+
    return (
       <section className="hero-section">
          <h2>Encuentra tu próximo trabajo</h2>
@@ -40,7 +49,10 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                <input
                   name={idText} id='search-filter' type="text"
                   placeholder="Buscar empleos por título, habilidad o empresa"
+                  className={isActive ? 'is-active' : ''}
                   onChange={handleTextChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                />
                <button type='submit' className='search-button'>Buscar</button>
             </div>

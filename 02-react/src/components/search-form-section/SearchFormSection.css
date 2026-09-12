@@ -24,11 +24,12 @@
 
       .search-container {
          display: flex;
+         gap: 1em;
          align-items: center;
          width: 100%;
          border-radius: 15px;
-         padding-block: 5px;
-         padding-inline: 15px 5px;
+         padding-block: 10px;
+         padding-inline: 15px 10px;
          background-color: var(--input-bg);
 
          input {
@@ -36,10 +37,16 @@
             color: var(--text-muted);
             height: 100%;
             width: 100%;
-            border: none;
             font-size: 15px;
             padding: 10px;
             outline: none;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+         }
+
+         .is-active {
+            border-color: var(--text-muted);
          }
 
          .search-button {
@@ -50,7 +57,7 @@
             padding: 10px 20px;
             font-size: 16px;
             border: none;
-            border-radius: 15px;
+            border-radius: 5px;
             height: 40px;
             cursor: pointer;
             transition-duration: 0.3s;
