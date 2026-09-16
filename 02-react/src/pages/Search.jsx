@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { JobsList } from '../components/jobs-list/JobsList.jsx'
 import { Pagination } from '../components/pagination/Pagination.jsx'
 import { SearchFormSection } from '../components/search-form-section/SearchFormSection.jsx'

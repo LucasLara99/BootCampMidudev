@@ -1,5 +1,6 @@
 import './Header.css'
 import { Avatar } from '../avatar/Avatar.jsx'
+import { Link } from '../Link.jsx'
 
 export function Header() {
    return (
@@ -13,8 +14,8 @@ export function Header() {
             </svg>
             <h2>DevJobs</h2>
             <nav>
-               <a href="/">Inicio</a>
-               <a href="/search">Empleos</a>
+               <Link href="/">Inicio</Link>
+               <Link href="/search">Empleos</Link>
             </nav>
          </div>
          <div>

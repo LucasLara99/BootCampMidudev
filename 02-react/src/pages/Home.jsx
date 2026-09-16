@@ -1,3 +1,4 @@
+import { Link } from '../components/Link'
 import './Home.css'
 
 export function Home() {
@@ -10,7 +11,7 @@ export function Home() {
             <h1>Encuentra el trabajo de tus sueños</h1>
             <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad</p>
 
-            <a href="/search">Buscar ofertas</a>
+            <Link href="/search">Buscar ofertas</Link>
          </section>
 
          <section>
