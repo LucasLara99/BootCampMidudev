@@ -3,17 +3,15 @@ import { Header } from './components/header/Header.jsx'
 import { Home } from './pages/Home.jsx'
 import { NotFound } from './pages/NotFound.jsx'
 import { Search } from './pages/Search.jsx'
-import { useRouter } from './hooks/useRouter.jsx'
+import { Route } from './components/Route.jsx'
 
 export function App() {
-   const { currentPath } = useRouter()
-
    return (
       <>
          <Header />
-         {currentPath === '/' && <Home />}
-         {currentPath === '/search' && <Search />}
-         {currentPath !== '/' && currentPath !== '/search' && <NotFound />}
+         <Route path={'/'} component={Home} />
+         <Route path={'/search'} component={Search} />
+         <Route path={'/404'} component={NotFound} />
          <Footer />
       </>
    )
