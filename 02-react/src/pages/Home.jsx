@@ -1,7 +1,19 @@
-import { Link } from '../components/Link'
 import './Home.css'
+import { useRouter } from '../hooks/useRouter'
 
 export function Home() {
+   const { navigateTo } = useRouter()
+   const handleSearch = (event) => {
+      event.preventDefault()
+      const formData = new FormData(event.target)
+      const searchTerm = formData.get('main-search-input')
+      const url = searchTerm
+         ? `/search?text=${encodeURI(searchTerm)}`
+         : `/search`
+
+      navigateTo(url)
+   }
+
    return (
       <main className='main-page-container'>
          <section>
@@ -11,7 +23,14 @@ export function Home() {
             <h1>Encuentra el trabajo de tus sueños</h1>
             <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad</p>
 
-            <Link href="/search">Buscar ofertas</Link>
+            <form className='main-page-form' role='search' onSubmit={handleSearch}>
+               <input
+                  name='main-search-input'
+                  type='text'
+                  placeholder='Busca una oferta...'
+               />
+               <button type='submit' className='main-search-button'>Buscar</button>
+            </form>
          </section>
 
          <section>
