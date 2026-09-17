@@ -7,10 +7,6 @@
    section:nth-child(1) {
       height: calc(100dvh - 70px);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
       cursor: default;
 
       video {
@@ -22,6 +18,15 @@
          left: 0;
          right: 0;
          mask-image: linear-gradient(to bottom, rgba(16, 25, 34, 1) 5%, rgba(16, 25, 34, 0) 90%);
+      }
+
+      article {
+         animation: fadeIn 1.4s ease-in;
+         display: flex;
+         gap: 1rem;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
       }
 
       h1 {
@@ -79,6 +84,7 @@
 
    }
 
+
    section:nth-child(2) {
       display: flex;
       flex-direction: column;
@@ -123,5 +129,15 @@
             gap: 1rem;
          }
       }
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
    }
 }

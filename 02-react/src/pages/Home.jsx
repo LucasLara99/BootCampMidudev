@@ -20,17 +20,19 @@ export function Home() {
             <video autoPlay muted loop>
                <source src="/background.mp4" type="video/mp4" />
             </video>
-            <h1>Encuentra el trabajo de tus sueños</h1>
-            <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad</p>
+            <article>
+               <h1>Encuentra el trabajo de tus sueños</h1>
+               <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad</p>
 
-            <form className='main-page-form' role='search' onSubmit={handleSearch}>
-               <input
-                  name='main-search-input'
-                  type='text'
-                  placeholder='Busca una oferta...'
-               />
-               <button type='submit' className='main-search-button'>Buscar</button>
-            </form>
+               <form className='main-page-form' role='search' onSubmit={handleSearch}>
+                  <input
+                     name='main-search-input'
+                     type='text'
+                     placeholder='Busca una oferta...'
+                  />
+                  <button type='submit' className='main-search-button'>Buscar</button>
+               </form>
+            </article>
          </section>
 
          <section>
