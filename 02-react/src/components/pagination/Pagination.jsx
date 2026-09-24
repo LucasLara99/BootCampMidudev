@@ -8,6 +8,12 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
    const styleFirstPage = isFirstPage ? { opacity: 0.2, pointerEvents: 'none' } : {}
    const styleLastPage = isLastPage ? { opacity: 0.2, pointerEvents: 'none' } : {}
 
+   const buildPageUrl = (page) => {
+      const url = new URL(window.location.href)
+      url.searchParams.set('page', page)
+      return `${url.pathname}?${url.searchParams.toString()}`
+   }
+
    const handlePrevClick = (event) => {
       event.preventDefault()
       if (!isFirstPage) {
@@ -30,7 +36,7 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
 
    return (
       <nav className="pagination">
-         <a href="#" style={styleFirstPage} onClick={handlePrevClick}>
+         <a href={buildPageUrl(currentPage - 1)} style={styleFirstPage} onClick={handlePrevClick}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                strokeLinecap="round" strokeLinejoin="round">
                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -40,7 +46,7 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
 
          {pages.map(page => (
             <a
-               href='#'
+               href={buildPageUrl(page)}
                className={page === currentPage ? 'is-active' : ''}
                onClick={(event) => handlePageClick(event, page)}
                key={page}
@@ -49,7 +55,7 @@ export function Pagination({ totalPages = 10, currentPage = 5, onPageChange }) {
             </a>
          ))}
 
-         <a href="#" style={styleLastPage} onClick={handleNextClick}>
+         <a href={buildPageUrl(currentPage + 1)} style={styleLastPage} onClick={handleNextClick}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
                strokeLinecap="round" strokeLinejoin="round"
                className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">

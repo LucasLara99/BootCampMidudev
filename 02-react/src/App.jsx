@@ -8,6 +8,7 @@ import { Route } from './components/Route.jsx'
 export function App() {
    return (
       <>
+         <title>DevJobs - Empleos</title>
          <Header />
          <Route path={'/'} component={Home} />
          <Route path={'/search'} component={Search} />

@@ -1,10 +1,11 @@
-import { useState, useId } from "react"
+import { useState, useId, useRef } from "react"
 
 export function useSearchForm({ onSearch, onTextFilter }) {
    const [isActive, setIsActive] = useState(false)
    const [technologyFilter, setTechnologyFilter] = useState('')
    const [locationFilter, setLocationFilter] = useState('')
    const [experienceFilter, setExperienceFilter] = useState('')
+   const textInputRef = useRef(null)
    const idText = useId()
    const idTechnology = useId()
    const idLocation = useId()
@@ -36,7 +37,14 @@ export function useSearchForm({ onSearch, onTextFilter }) {
 
    const handleTextChange = (event) => {
       const text = event.target.value
-      onTextFilter(text)
+
+      if (textInputRef.current) {
+         clearTimeout(textInputRef.current)
+      }
+
+      textInputRef.current = setTimeout(() => {
+         onTextFilter(text)
+      }, 500)
    }
 
    const handleFocus = () => {
