@@ -13,12 +13,19 @@ export function Search() {
       setCurrentPage,
       currentPage,
       jobs,
-      isLoading
+      isLoading,
+      textToFilter,
+      filters
    } = useSearch()
 
    return (
       <main>
-         <SearchFormSection onTextFilter={handleTextFilter} onSearch={handleSearch} />
+         <SearchFormSection
+            initialText={textToFilter}
+            initialFilters={filters}
+            onTextFilter={handleTextFilter}
+            onSearch={handleSearch}
+         />
          {
             isLoading
                ? <Trio

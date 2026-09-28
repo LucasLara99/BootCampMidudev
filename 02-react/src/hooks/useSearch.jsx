@@ -1,18 +1,33 @@
 import { useEffect, useState } from "react"
+import { useRouter } from "./useRouter"
 
 const RESULTS_PER_PAGE = 5
 
 export function useSearch() {
-   const [currentPage, setCurrentPage] = useState(1)
-   const [textToFilter, setTextToFilter] = useState('')
+   const { navigateTo } = useRouter()
    const [jobs, setJobs] = useState([])
    const [total, setTotal] = useState(0)
    const [error, setError] = useState(null)
    const [isLoading, setIsLoading] = useState(false)
-   const [filters, setFilters] = useState({
-      technology: '',
-      location: '',
-      experience: ''
+
+   const [filters, setFilters] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      return {
+         technology: params.get('technology') || '',
+         location: params.get('type') || '',
+         experience: params.get('level') || ''
+      }
+   })
+
+   const [textToFilter, setTextToFilter] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      return params.get('text') || ''
+   })
+
+   const [currentPage, setCurrentPage] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      const page = Number(params.get('page'))
+      return Number.isNaN(page) ? page : 1
    })
 
    const handleTextFilter = (newTextToFilter) => {
@@ -34,23 +49,12 @@ export function useSearch() {
          try {
             setIsLoading(true)
             setError(null)
+
             const params = new URLSearchParams()
-
-            if (textToFilter) {
-               params.append('text', textToFilter)
-            }
-
-            if (filters.technology) {
-               params.append('technology', filters.technology)
-            }
-
-            if (filters.location) {
-               params.append('type', filters.location)
-            }
-
-            if (filters.experience) {
-               params.append('level', filters.experience)
-            }
+            if (textToFilter) params.append('text', textToFilter)
+            if (filters.technology) params.append('technology', filters.technology)
+            if (filters.location) params.append('type', filters.location)
+            if (filters.experience) params.append('level', filters.experience)
 
             const offset = (RESULTS_PER_PAGE * (currentPage - 1))
             params.append('limit', RESULTS_PER_PAGE)
@@ -83,6 +87,22 @@ export function useSearch() {
       fetchJobs()
    }, [currentPage, textToFilter, filters])
 
+   useEffect(() => {
+      const params = new URLSearchParams()
+      if (textToFilter) params.append('text', textToFilter)
+      if (filters.technology) params.append('technology', filters.technology)
+      if (filters.location) params.append('type', filters.location)
+      if (filters.experience) params.append('level', filters.experience)
+
+      if (currentPage > 1) params.append('page', currentPage)
+
+      const newUrl = params.toString()
+         ? `${window.location.pathname}?${params.toString()}`
+         : window.location.pathname
+
+      navigateTo(newUrl)
+   }, [currentPage, textToFilter, filters, navigateTo])
+
    const totalPages = Math.ceil(total / RESULTS_PER_PAGE)
 
    return {
@@ -92,6 +112,8 @@ export function useSearch() {
       setCurrentPage,
       currentPage,
       jobs,
-      isLoading
+      isLoading,
+      textToFilter,
+      filters
    }
 }

@@ -1,7 +1,7 @@
 import './SearchFormSection.css'
 import { useSearchForm } from '../../hooks/useSearchForm'
 
-export function SearchFormSection({ onSearch, onTextFilter }) {
+export function SearchFormSection({ initialText, initialFilters, onSearch, onTextFilter }) {
 
    const {
       handleSubmit,
@@ -40,10 +40,17 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   onChange={handleTextChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
+                  defaultValue={initialText}
                />
             </div>
             <div className="filters-container">
-               <select name={idTechnology} onChange={handleFilterChange} id='technology-filter' className={technologyFilter !== '' ? 'has-data' : ''}>
+               <select
+                  name={idTechnology}
+                  onChange={handleFilterChange}
+                  id='technology-filter'
+                  className={technologyFilter !== '' ? 'has-data' : ''}
+                  defaultValue={initialFilters.technology}
+               >
                   <option value="">Todas las tecnologías</option>
                   <hr />
                   <optgroup label="Frontend">
@@ -65,7 +72,13 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   <option value="agile">Agile</option>
                   <option value="qa">QA</option>
                </select>
-               <select name={idLocation} onChange={handleFilterChange} id='location-filter' className={locationFilter !== '' ? 'has-data' : ''}>
+               <select
+                  name={idLocation}
+                  onChange={handleFilterChange}
+                  id='location-filter'
+                  className={locationFilter !== '' ? 'has-data' : ''}
+                  defaultValue={initialFilters.location}
+               >
                   <option value="">Todas las ubicaciones</option>
                   <hr />
                   <optgroup label="Latinoamérica">
@@ -83,7 +96,13 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                   <hr />
                   <option value="remoto">Remoto</option>
                </select>
-               <select name={idExperience} onChange={handleFilterChange} id='experience-filter' className={experienceFilter !== '' ? 'has-data' : ''}>
+               <select
+                  name={idExperience}
+                  onChange={handleFilterChange}
+                  id='experience-filter'
+                  className={experienceFilter !== '' ? 'has-data' : ''}
+                  defaultValue={initialFilters.experience}
+               >
                   <option value="">Niveles de experiencia</option>
                   <hr />
                   <option value="junior">Junior</option>
