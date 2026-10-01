@@ -1,0 +1,88 @@
+.hero-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin-bottom: 2em;
+
+   h2 {
+      font-size: 35px;
+      padding: 2.5rem 1rem 1rem 1rem;
+   }
+
+   >p {
+      font-size: 16px;
+      padding-bottom: 2rem;
+   }
+
+   form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 100%;
+
+      .search-container {
+         display: flex;
+         gap: 1em;
+         align-items: center;
+         width: 100%;
+         border-radius: 15px;
+         padding-block: 10px;
+         padding-inline: 15px 10px;
+         background-color: var(--input-bg);
+
+         input {
+            background-color: var(--input-bg);
+            color: var(--text-muted);
+            height: 100%;
+            width: 100%;
+            font-size: 15px;
+            padding: 10px;
+            outline: none;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+         }
+
+         .is-active {
+            border-color: var(--text-muted);
+         }
+      }
+
+   }
+
+   .filters-container {
+      display: flex;
+      gap: 1em;
+
+      select {
+         padding: 0.625rem 1.25rem;
+         background-color: #242d3a;
+         border: 0;
+         border-radius: 0.5rem;
+         font-size: 0.875rem;
+         color: #ddd;
+         cursor: pointer;
+         transition: all 0.4s;
+         appearance: none;
+         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+         background-repeat: no-repeat;
+         background-position: right 0.5rem center;
+         padding-right: 2.5rem;
+
+         &:focus &:hover {
+            outline: 2px solid #1173d4;
+         }
+
+         &:hover {
+            outline: 1px solid #1173d4;
+         }
+      }
+
+      .has-data {
+         background-color: var(--primary-hover);
+         color: white;
+      }
+   }
+}

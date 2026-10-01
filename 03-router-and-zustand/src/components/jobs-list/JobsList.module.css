@@ -1,0 +1,16 @@
+.jobsListSection {
+   width: 100%;
+}
+
+.jobsListTitle {
+   margin-block: 1em 2em;
+}
+
+.jobsListing {
+   border: 1px solid var(--text-muted);
+   border-radius: 1rem;
+}
+
+.noData {
+   color: rgb(122, 122, 122);
+}
