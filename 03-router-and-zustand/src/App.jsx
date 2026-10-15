@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router'
 import { Home } from './pages/Home.jsx'
 import { NotFound } from './pages/NotFound.jsx'
 import { Search } from './pages/Search.jsx'
+import { JobDetail } from './pages/JobDetail.jsx'
 
 export function App() {
    return (
@@ -13,6 +14,7 @@ export function App() {
          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/jobs/:jobId" element={<JobDetail />} />
             <Route path="*" element={<NotFound />} />
          </Routes>
          <Footer />
