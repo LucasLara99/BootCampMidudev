@@ -101,7 +101,7 @@ export function useSearch() {
          : window.location.pathname
 
       navigateTo(newUrl)
-   }, [currentPage, textToFilter, filters, navigateTo])
+   }, [currentPage, textToFilter, filters])
 
    const totalPages = Math.ceil(total / RESULTS_PER_PAGE)
 
