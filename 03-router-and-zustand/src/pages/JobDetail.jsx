@@ -8,13 +8,12 @@ export function JobDetail() {
    const { jobId } = useParams()
    const [job, setJob] = useState(null)
    const [error, setError] = useState(null)
-   const [loading, setLoading] = useState(false)
+   const [loading, setLoading] = useState(true)
    const navigate = useNavigate()
 
    useEffect(() => {
       async function fetchJobDetails() {
          try {
-            setLoading(true)
             setError(null)
             const response = await fetch(`https://jscamp-api.vercel.app/api/jobs/${jobId}`)
             if (!response.ok) {
