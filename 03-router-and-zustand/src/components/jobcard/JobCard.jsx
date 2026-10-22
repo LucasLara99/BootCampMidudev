@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './JobCard.css'
+import { Link } from 'react-router'
 
 export function JobCard({ job }) {
    const { titulo, empresa, ubicacion, descripcion } = job
@@ -13,7 +14,12 @@ export function JobCard({ job }) {
    return (
       <article className='job-listing-card'>
          <aside>
-            <h3>{titulo}</h3>
+            <Link
+               to={`/jobs/${job.id}`}
+               className='job-title'
+            >
+               <h3>{titulo}</h3>
+            </Link>
             <small>{empresa} | {ubicacion}</small>
             <p className="description">{descripcion}</p>
          </aside>
