@@ -1,7 +1,7 @@
 import './Home.css'
 import { useRouter } from '../hooks/useRouter'
 
-export function Home() {
+export default function Home() {
    const { navigateTo } = useRouter()
    const handleSearch = (event) => {
       event.preventDefault()

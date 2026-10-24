@@ -5,7 +5,7 @@ import { Pagination } from '../components/pagination/Pagination.jsx'
 import { SearchFormSection } from '../components/search-form-section/SearchFormSection.jsx'
 import { useSearch } from '../hooks/useSearch.jsx'
 
-export function Search() {
+export default function Search() {
    const {
       handleTextFilter,
       handleSearch,

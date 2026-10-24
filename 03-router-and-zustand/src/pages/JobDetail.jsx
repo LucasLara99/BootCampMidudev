@@ -4,7 +4,7 @@ import styles from './JobDetail.module.css'
 import { JobSection } from "../components/job-section/JobSection"
 import { Trio } from 'ldrs/react'
 
-export function JobDetail() {
+export default function JobDetail() {
    const { jobId } = useParams()
    const [job, setJob] = useState(null)
    const [error, setError] = useState(null)
