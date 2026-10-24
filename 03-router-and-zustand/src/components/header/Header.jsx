@@ -1,6 +1,6 @@
 import './Header.css'
 import { Avatar } from '../avatar/Avatar.jsx'
-import { Link } from '../Link.jsx'
+import { NavLink } from 'react-router'
 
 export function Header() {
    return (
@@ -14,8 +14,18 @@ export function Header() {
             </svg>
             <h2>DevJobs</h2>
             <nav>
-               <Link href="/">Inicio</Link>
-               <Link href="/search">Empleos</Link>
+               <NavLink
+                  className={({ isActive }) => isActive ? 'home-active' : ''}
+                  to="/"
+               >
+                  Inicio
+               </NavLink>
+               <NavLink
+                  className={({ isActive }) => isActive ? 'search-active' : ''}
+                  to="/search"
+               >
+                  Ofertas
+               </NavLink>
             </nav>
          </div>
          <div>
